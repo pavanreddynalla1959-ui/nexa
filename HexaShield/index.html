@@ -22,7 +22,121 @@ const formHost=document.getElementById("customerInsightsFormHost");new MutationO
 </script>
 <script src="https://formui-usa1.mkt.dynamics.com/usa/FormLoader/FormLoader.bundle.js"></script>
 <script>
-const events={"NexaShield Cyber Defense Summit 2026":{type:"Flagship Summit",title:"NexaShield Cyber Defense Summit 2026",summary:"A focused gathering for security leaders and practitioners exploring modern threats, resilient operations, zero-trust strategy, and collaborative cyber defense.",date:"18 September 2026",time:"9:00 AM – 4:30 PM",format:"In-person",audience:"Security leaders",agenda:[["09:00","Opening and threat landscape","Risks shaping enterprise security."],["10:15","Zero-trust operating model","Moving principles into measurable controls."],["11:45","Intelligence-led defense","Prioritizing action using threat intelligence."],["14:00","Incident simulation","Leadership decisions during a cyber event."]],highlights:["Executive and practitioner sessions","Incident simulation","Zero-trust guidance","Peer networking"]},"Customer Insights – Journeys Employee Training":{type:"Executive Briefing",title:"Incident Response Readiness Briefing",summary:"Prepare people, processes, and decision paths before a high-pressure cybersecurity incident occurs.",date:"9 October 2026",time:"10:00 AM – 1:00 PM",format:"Hybrid",audience:"CISOs and response leads",agenda:[["10:00","Readiness baseline","Review the critical parts of a response plan."],["10:40","Roles under pressure","Clarify business and technical ownership."],["11:30","Executive tabletop","Test decisions using a ransomware scenario."],["12:30","Improvement plan","Prioritize readiness actions."]],highlights:["Executive decision framework","Ransomware tabletop","Response-role clarity","Readiness checklist"]},"Customer Insights – Journeys Employee Training":{type:"Strategy Workshop",title:"Cloud Security Strategy Workshop",summary:"Strengthen cloud governance, identity controls, workload visibility, and security operations.",date:"6 November 2026",time:"9:30 AM – 3:30 PM",format:"Online",audience:"Cloud and security teams",agenda:[["09:30","Cloud risk priorities","Map risks across workloads."],["10:30","Identity-first controls","Reduce exposure through access architecture."],["11:45","Visibility and detection","Design useful telemetry and alerting."],["13:45","Governance workshop","Create repeatable guardrails."]],highlights:["Strategy exercises","Identity focus","Governance patterns","90-day roadmap"]}};
+const events = {
+  "NexaShield Cyber Defense Summit 2026": {
+    type: "Flagship Summit",
+    title: "NexaShield Cyber Defense Summit 2026",
+    summary: "A focused gathering for security leaders and practitioners exploring modern threats, resilient operations, zero-trust strategy, and collaborative cyber defense.",
+    date: "18 September 2026",
+    time: "9:00 AM – 4:30 PM",
+    format: "In-person",
+    audience: "Security leaders",
+    agenda: [
+      [
+        "09:00",
+        "Opening and threat landscape",
+        "Risks shaping enterprise security."
+      ],
+      [
+        "10:15",
+        "Zero-trust operating model",
+        "Moving principles into measurable controls."
+      ],
+      [
+        "11:45",
+        "Intelligence-led defense",
+        "Prioritizing action using threat intelligence."
+      ],
+      [
+        "14:00",
+        "Incident simulation",
+        "Leadership decisions during a cyber event."
+      ]
+    ],
+    highlights: [
+      "Executive and practitioner sessions",
+      "Incident simulation",
+      "Zero-trust guidance",
+      "Peer networking"
+    ]
+  },
+
+  "Customer Insights – Journeys Employee Training": {
+    type: "Executive Briefing",
+    title: "Customer Insights – Journeys Employee Training",
+    summary: "A focused employee training programme covering Customer Insights – Journeys, audience engagement, journey orchestration, and practical marketing automation.",
+    date: "9 October 2026",
+    time: "10:00 AM – 1:00 PM",
+    format: "Hybrid",
+    audience: "Customer Insights users",
+    agenda: [
+      [
+        "10:00",
+        "Customer Insights overview",
+        "Understand the core capabilities of Customer Insights – Journeys."
+      ],
+      [
+        "10:40",
+        "Segments and triggers",
+        "Learn how audiences enter real-time journeys."
+      ],
+      [
+        "11:30",
+        "Journey orchestration",
+        "Build branches, waits, conditions, and follow-up communications."
+      ],
+      [
+        "12:30",
+        "Practical implementation",
+        "Apply the learning through a guided business scenario."
+      ]
+    ],
+    highlights: [
+      "Real-time journey fundamentals",
+      "Segments and triggers",
+      "Marketing forms",
+      "Practical automation exercise"
+    ]
+  },
+
+  "SkyAssist Customer Service Training": {
+    type: "Strategy Workshop",
+    title: "SkyAssist Customer Service Training",
+    summary: "A practical customer-service training programme focused on case handling, service consistency, customer communication, and operational improvement.",
+    date: "6 November 2026",
+    time: "9:30 AM – 3:30 PM",
+    format: "Online",
+    audience: "Customer service teams",
+    agenda: [
+      [
+        "09:30",
+        "Customer service foundations",
+        "Review the principles of consistent and effective customer support."
+      ],
+      [
+        "10:30",
+        "Case management",
+        "Learn how to capture, prioritize, assign, and resolve customer cases."
+      ],
+      [
+        "11:45",
+        "Customer communication",
+        "Develop clear and professional communication throughout the service process."
+      ],
+      [
+        "13:45",
+        "Service improvement workshop",
+        "Identify operational improvements and create an actionable service roadmap."
+      ]
+    ],
+    highlights: [
+      "Case-management practices",
+      "Customer communication",
+      "Service consistency",
+      "Operational improvement plan"
+    ]
+  }
+};
 const home=document.getElementById("homeView"),details=document.getElementById("detailsView"),root=document.getElementById("detailsRoot"),selectedEventName=document.getElementById("selectedEventName");
 function showEvent(key,push=true){const e=events[key];if(!e)return;currentEventKey=key;const agenda=e.agenda.map(x=>`<div class="agenda-item"><div class="time">${x[0]}</div><div><strong>${x[1]}</strong><small>${x[2]}</small></div></div>`).join(""),benefits=e.highlights.map(x=>`<li>${x}</li>`).join("");root.innerHTML=`<section class="details-hero"><div class="container"><a class="back back-home" href="#events">← Back to all events</a><p class="eyebrow">${e.type} · NexaShield 2026</p><h1>${e.title}</h1><p class="lead">${e.summary}</p><div class="facts"><div class="fact"><span>Date</span><strong>${e.date}</strong></div><div class="fact"><span>Time</span><strong>${e.time}</strong></div><div class="fact"><span>Format</span><strong>${e.format}</strong></div><div class="fact"><span>For</span><strong>${e.audience}</strong></div></div></div></section><section><div class="container details-grid"><div class="panel"><h2>Event agenda</h2><div class="agenda">${agenda}</div></div><aside class="panel"><h2>What you will gain</h2><ul class="highlights">${benefits}</ul></aside></div></section>`;selectedEventName.textContent=e.title;home.classList.add("hidden");details.classList.add("active");document.title=e.title+" | NexaShield";if(push)history.pushState({event:key},"",`?event=${encodeURIComponent(key)}`);if(!populateSelectedEvent(key))retryPopulateSelectedEvent();window.scrollTo(0,0);bindBack()}
 function showHome(push=true){details.classList.remove("active");home.classList.remove("hidden");document.title="NexaShield Cyber Defense | Events";if(push)history.pushState({},"",location.pathname+"#events");setTimeout(()=>document.getElementById("events").scrollIntoView(),20)}
