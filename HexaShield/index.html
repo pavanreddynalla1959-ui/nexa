@@ -1,147 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
+  
 <head>
+  <script>
+           (function (a, t, i) { var e = "MSEI"; var s = "Analytics"; var o = e + "queue"; a[o] = a[o] || []; var r = a[e] || function (n) { var t = {}; t[s] = {}; function e(e) { while (e.length) { var r = e.pop(); t[s][r] = function (e) { return function () { a[o].push([e, n, arguments]) } }(r) } } var r = "track"; var i = "set"; e([r + "Event", r + "View", r + "Action", i + "Property", i + "User", "initialize", "teardown"]); return t }(i.name); var n = i.name; if (!a[e]) { a[n] = r[s]; a[o].push(["new", n]); setTimeout(function () { var e = "script"; var r = t.createElement(e); r.async = 1; r.src = i.src; var n = t.getElementsByTagName(e)[0]; n.parentNode.insertBefore(r, n) }, 1) } else { a[n] = new r[s] } if (i.user) { a[n].setUser(i.user) } if (i.props) { for (var c in i.props) { a[n].setProperty(c, i.props[c]) } } a[n].initialize(i.cfg) })(window, document, {
+                src: "https://download.pi.dynamics.com/sdk/web/msei-0.js",
+                name: "msdynmkt",
+                cfg: {
+                    ingestionKey:"5a2e31c53eca40fbb3427474546c7c53-fb88e609-b5fb-45c5-a5da-454799060122-6948"
+                }
+            });
+        </script>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NexaShield Cyber Defense | Events</title>
 <style>
 :root{--bg:#f4f8fc;--surface:#fff;--soft:#edf5fb;--text:#10253b;--muted:#597087;--navy:#0b3558;--blue:#1267a5;--cyan:#00a8c8;--green:#15956f;--border:#d8e5ef;--shadow:0 18px 50px rgba(25,67,101,.12)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 85% 4%,rgba(18,103,165,.1),transparent 28rem),var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6}a{text-decoration:none;color:inherit}.container{width:min(1120px,calc(100% - 40px));margin:auto}.header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);border-bottom:1px solid var(--border);backdrop-filter:blur(14px)}.nav{min-height:72px;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:12px;font-weight:850;color:var(--navy)}.brand b{color:var(--cyan)}.shield{width:38px;height:42px;display:grid;place-items:center;color:#fff;background:linear-gradient(135deg,var(--blue),var(--cyan));clip-path:polygon(50% 0,90% 16%,82% 70%,50% 100%,18% 70%,10% 16%);font-weight:950}.navlinks{display:flex;gap:24px;color:var(--muted);font-weight:700}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:11px 18px;border:1px solid transparent;border-radius:12px;font-weight:800;cursor:pointer}.primary{color:#fff;background:linear-gradient(135deg,var(--blue),var(--cyan))}.secondary{color:var(--blue);background:#fff;border-color:var(--border)}.hero{padding:92px 0 68px}.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}.eyebrow{color:var(--blue);font-size:.82rem;font-weight:850;letter-spacing:.13em;text-transform:uppercase}h1{margin:16px 0;font-size:clamp(2.7rem,6vw,5rem);line-height:1;letter-spacing:-.05em}.accent{color:var(--cyan)}.lead{max-width:680px;color:var(--muted);font-size:1.1rem}.hero-card,.card,.panel{background:var(--surface);border:1px solid var(--border);border-radius:22px;box-shadow:var(--shadow)}.hero-card{padding:30px}.metrics{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px}.metric{padding:15px;border-radius:14px;background:var(--soft)}.metric strong{display:block;color:var(--blue);font-size:1.3rem}section{padding:70px 0}.heading{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:28px}.heading h2{margin:6px 0 0;font-size:clamp(2rem,4vw,3rem);line-height:1.05}.heading p{max-width:520px;color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.card{overflow:hidden;display:flex;flex-direction:column}.card-top{padding:24px;min-height:140px;background:linear-gradient(135deg,#e2f2ff,#f8fcff)}.card-top.green{background:linear-gradient(135deg,#e2f7ef,#f8fcfa)}.card-top.purple{background:linear-gradient(135deg,#eee9ff,#faf9ff)}.card-top small{color:var(--blue);font-weight:850;text-transform:uppercase;letter-spacing:.08em}.card-top h3{margin:12px 0 0;color:var(--navy);font-size:1.4rem;line-height:1.2}.card-body{padding:24px;display:flex;flex:1;flex-direction:column}.card-body p{color:var(--muted)}.card-body .btn{margin-top:auto}.details{display:none}.details.active{display:block}.home.hidden{display:none}.details-hero{padding:72px 0 42px}.back{color:var(--blue);font-weight:800}.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:34px}.fact{padding:17px;background:#fff;border:1px solid var(--border);border-radius:14px}.fact span{display:block;color:var(--muted);font-size:.77rem;text-transform:uppercase}.details-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:22px}.panel{padding:28px}.agenda{display:grid;gap:11px}.agenda-item{display:grid;grid-template-columns:86px 1fr;gap:14px;padding:15px;background:var(--soft);border-radius:12px}.time{color:var(--blue);font-weight:850}.agenda-item small{display:block;color:var(--muted)}.highlights{padding:0;list-style:none}.highlights li{margin:9px 0;padding:12px 12px 12px 38px;position:relative;background:var(--soft);border-radius:11px}.highlights li:before{content:"✓";position:absolute;left:14px;color:var(--green);font-weight:900}.request{max-width:760px;margin:auto}.selected{display:flex;justify-content:space-between;gap:18px;margin:18px 0;padding:15px;border:1px solid #c8e0ec;border-radius:13px;background:#eff9fc}.selected span{color:var(--muted);font-size:.8rem;text-transform:uppercase}.form-host{min-height:150px;padding:20px;border:1px solid #d4e4ed;border-radius:15px;background:#fbfdff;text-align:left}.status{margin-top:12px;font-size:.86rem;color:var(--muted)}.status.success{color:var(--green);font-weight:700}.status.error{color:#b42318}.textFormFieldBlock:has(input[name="selectedevent"]),.textFormFieldBlock:has(input[name="shorttext4025"]),.textFormFieldBlock:has(input[id^="shorttext4025-"]){display:none!important}footer{padding:28px 0 42px;color:var(--muted)}.footer{padding-top:24px;border-top:1px solid var(--border);display:flex;justify-content:space-between}@media(max-width:900px){.hero-grid,.grid,.details-grid{grid-template-columns:1fr}.facts{grid-template-columns:1fr 1fr}.navlinks{display:none}.heading{align-items:start;flex-direction:column}}@media(max-width:560px){.container{width:min(100% - 28px,1120px)}.metrics,.facts{grid-template-columns:1fr}.agenda-item{grid-template-columns:1fr}.selected,.footer{flex-direction:column}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 85% 4%,rgba(18,103,165,.1),transparent 28rem),var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6}a{text-decoration:none;color:inherit}.container{width:min(1120px,calc(100% - 40px));margin:auto}.header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);border-bottom:1px solid var(--border);backdrop-filter:blur(14px)}.nav{min-height:72px;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:12px;font-weight:850;color:var(--navy)}.brand b{color:var(--cyan)}.shield{width:38px;height:42px;display:grid;place-items:center;color:#fff;background:linear-gradient(135deg,var(--blue),var(--cyan));clip-path:polygon(50% 0,90% 16%,82% 70%,50% 100%,18% 70%,10% 16%);font-weight:950}.navlinks{display:flex;gap:24px;color:var(--muted);font-weight:700}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:11px 18px;border:1px solid transparent;border-radius:12px;font-weight:800;cursor:pointer}.primary{color:#fff;background:linear-gradient(135deg,var(--blue),var(--cyan))}.secondary{color:var(--blue);background:#fff;border-color:var(--border)}.hero{padding:92px 0 68px}.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}.eyebrow{color:var(--blue);font-size:.82rem;font-weight:850;letter-spacing:.13em;text-transform:uppercase}h1{margin:16px 0;font-size:clamp(2.7rem,6vw,5rem);line-height:1;letter-spacing:-.05em}.accent{color:var(--cyan)}.lead{max-width:680px;color:var(--muted);font-size:1.1rem}.hero-card,.card,.panel{background:var(--surface);border:1px solid var(--border);border-radius:22px;box-shadow:var(--shadow)}.hero-card{padding:30px}.metrics{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px}.metric{padding:15px;border-radius:14px;background:var(--soft)}.metric strong{display:block;color:var(--blue);font-size:1.3rem}section{padding:70px 0}.heading{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:28px}.heading h2{margin:6px 0 0;font-size:clamp(2rem,4vw,3rem);line-height:1.05}.heading p{max-width:520px;color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.card{overflow:hidden;display:flex;flex-direction:column}.card-top{padding:24px;min-height:140px;background:linear-gradient(135deg,#e2f2ff,#f8fcff)}.card-top.green{background:linear-gradient(135deg,#e2f7ef,#f8fcfa)}.card-top.purple{background:linear-gradient(135deg,#eee9ff,#faf9ff)}.card-top small{color:var(--blue);font-weight:850;text-transform:uppercase;letter-spacing:.08em}.card-top h3{margin:12px 0 0;color:var(--navy);font-size:1.4rem;line-height:1.2}.card-body{padding:24px;display:flex;flex:1;flex-direction:column}.card-body p{color:var(--muted)}.card-body .btn{margin-top:auto}.details{display:none}.details.active{display:block}.home.hidden{display:none}.details-hero{padding:72px 0 42px}.back{color:var(--blue);font-weight:800}.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:34px}.fact{padding:17px;background:#fff;border:1px solid var(--border);border-radius:14px}.fact span{display:block;color:var(--muted);font-size:.77rem;text-transform:uppercase}.details-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:22px}.panel{padding:28px}.agenda{display:grid;gap:11px}.agenda-item{display:grid;grid-template-columns:86px 1fr;gap:14px;padding:15px;background:var(--soft);border-radius:12px}.time{color:var(--blue);font-weight:850}.agenda-item small{display:block;color:var(--muted)}.highlights{padding:0;list-style:none}.highlights li{margin:9px 0;padding:12px 12px 12px 38px;position:relative;background:var(--soft);border-radius:11px}.highlights li:before{content:"✓";position:absolute;left:14px;color:var(--green);font-weight:900}.request{max-width:760px;margin:auto}.selected{display:flex;justify-content:space-between;gap:18px;margin:18px 0;padding:15px;border:1px solid #c8e0ec;border-radius:13px;background:#eff9fc}.selected span{color:var(--muted);font-size:.8rem;text-transform:uppercase}.form-host{min-height:150px;padding:20px;border:1px solid #d4e4ed;border-radius:15px;background:#fbfdff;text-align:left}.status{margin-top:12px;font-size:.86rem;color:var(--muted)}footer{padding:28px 0 42px;color:var(--muted)}.footer{padding-top:24px;border-top:1px solid var(--border);display:flex;justify-content:space-between}
+@media(max-width:900px){.hero-grid,.grid,.details-grid{grid-template-columns:1fr}.facts{grid-template-columns:1fr 1fr}.navlinks{display:none}.heading{align-items:start;flex-direction:column}}@media(max-width:560px){.container{width:min(100% - 28px,1120px)}.metrics,.facts{grid-template-columns:1fr}.agenda-item{grid-template-columns:1fr}.selected,.footer{flex-direction:column}}
 </style>
 </head>
 <body>
-<div class="home" id="homeView"><header class="header"><div class="container nav"><a class="brand" href="#"><span class="shield">N</span><span>Nexa<b>Shield</b></span></a><nav class="navlinks"><a href="#events">Events</a><a href="#about">How it works</a></nav><a class="btn secondary" href="#events">Explore events</a></div></header><main><section class="hero"><div class="container hero-grid"><div><span class="eyebrow">Cyber intelligence in action</span><h1>Build resilience before the <span class="accent">next threat</span>.</h1><p class="lead">Explore NexaShield summits, briefings, and workshops. Select an event and request the official invitation by email.</p><a class="btn primary" href="#events">View current events</a></div><aside class="hero-card"><span class="eyebrow">Current programme</span><h2>Security knowledge that moves teams forward.</h2><p class="lead">Three focused programmes for leaders and security practitioners.</p><div class="metrics"><div class="metric"><strong>3</strong>Programmes</div><div class="metric"><strong>2026</strong>Event season</div><div class="metric"><strong>Live</strong>Expert sessions</div><div class="metric"><strong>Global</strong>Community</div></div></aside></div></section><section id="events"><div class="container"><div class="heading"><div><span class="eyebrow">Current programme</span><h2>Choose your next briefing</h2></div><p>Open a brochure, review the agenda, then enter your details to request the official invitation.</p></div><div class="grid"><article class="card"><div class="card-top"><small>Flagship summit · 2026</small><h3>NexaShield Cyber Defense Summit</h3></div><div class="card-body"><p>Modern threats, resilient operations, intelligence-led defense, and zero trust.</p><a class="btn primary" href="?event=NexaShield Cyber Defense Summit 2026" data-event="NexaShield Cyber Defense Summit 2026">View event brochure</a></div></article><article class="card"><div class="card-top green"><small>Executive briefing · 2026</small><h3>Incident Response Readiness</h3></div><div class="card-body"><p>Response planning, executive decisions, crisis coordination, and recovery.</p><a class="btn primary" href="?event=Customer Insights – Journeys Employee Training" data-event="Customer Insights – Journeys Employee Training">View event brochure</a></div></article><article class="card"><div class="card-top purple"><small>Strategy workshop · 2026</small><h3>Cloud Security Strategy Workshop</h3></div><div class="card-body"><p>Cloud governance, identity controls, visibility, and security operations.</p><a class="btn primary" href="?event=Customer Insights – Journeys Employee Training" data-event="Customer Insights – Journeys Employee Training">View event brochure</a></div></article></div></div></section><section id="about"><div class="container panel"><span class="eyebrow">How it works</span><h2>Browse, choose, request</h2><p class="lead">Open an event brochure, review the details, and submit the embedded Customer Insights form.</p></div></section></main><footer><div class="container footer"><span>© 2026 NexaShield Cyber Defense.</span><span>Demonstration website</span></div></footer></div>
-<div class="details" id="detailsView"><header class="header"><div class="container nav"><a class="brand back-home" href="#events"><span class="shield">N</span><span>Nexa<b>Shield</b></span></a><a class="btn secondary back-home" href="#events">All events</a></div></header><main><div id="detailsRoot"></div><section id="request-invitation"><div class="container panel request"><span class="eyebrow">Request invitation</span><h2>Send the invitation to your email</h2><p class="lead">Submit your details below for the selected event.</p><div class="selected"><span>Selected event</span><strong id="selectedEventName">Choose an event</strong></div><div class="form-host" id="customerInsightsFormHost"><div data-form-id="efbd04de-cc8f-f111-8076-000d3a59d82d" data-form-api-url="https://public-usa.mkt.dynamics.com/api/v1.0/orgs/39a3b82d-2a6e-f111-b27b-000d3a5ca807/landingpageforms" data-cached-form-url="https://assets1-usa.mkt.dynamics.com/39a3b82d-2a6e-f111-b27b-000d3a5ca807/digitalassets/forms/efbd04de-cc8f-f111-8076-000d3a59d82d"></div></div><div class="status" id="eventFieldStatus">Waiting for Customer Insights form…</div></div></section></main><footer><div class="container footer"><span>© 2026 NexaShield Cyber Defense.</span><span>Demonstration website</span></div></footer></div>
+  <script>
+function enableReminders() {
+
+    window["msdynmkt"].setUser({
+        authId: "nallapavanadityareddy@gmail.com"
+    });
+
+    window["msdynmkt"].trackEvent({
+        name: "msdynmkt_remainderopt_035810635",
+        ingestionKey: "5a2e31c53eca40fbb3427474546c7c53-fb88e609-b5fb-45c5-a5da-454799060122-6948",
+        version: "1.0.0",
+        properties: {
+            bindingid: "ReminderOptIn"
+        }
+    });
+
+    alert("Email reminders enabled");
+}
+</script>
+<div class="home" id="homeView">
+<header class="header"><div class="container nav"><a class="brand" href="#"><span class="shield">N</span><span>Nexa<b>Shield</b></span></a><nav class="navlinks"><a href="#events">Events</a><a href="#about">How it works</a></nav><a class="btn secondary" href="#events">Explore events</a></div></header>
+<main>
+<section class="hero"><div class="container hero-grid"><div><span class="eyebrow">Cyber intelligence in action</span><h1>Build resilience before the <span class="accent">next threat</span>.</h1><p class="lead">Explore NexaShield summits, briefings, and workshops. Select an event and request the official invitation by email.</p><a class="btn primary" href="#events">View current events</a></div><aside class="hero-card"><span class="eyebrow">Current programme</span><h2>Security knowledge that moves teams forward.</h2><p class="lead">Three focused programmes for leaders and security practitioners.</p><div class="metrics"><div class="metric"><strong>3</strong>Programmes</div><div class="metric"><strong>2026</strong>Event season</div><div class="metric"><strong>Live</strong>Expert sessions</div><div class="metric"><strong>Global</strong>Community</div></div></aside></div></section>
+<section id="events"><div class="container"><div class="heading"><div><span class="eyebrow">Current programme</span><h2>Choose your next briefing</h2></div><p>Open a brochure, review the agenda, then enter your details to request the official invitation.</p></div><div class="grid">
+<article class="card"><div class="card-top"><small>Flagship summit · 2026</small><h3>NexaShield Cyber Defense Summit</h3></div><div class="card-body"><p>Modern threats, resilient operations, intelligence-led defense, and zero trust.</p><a class="btn primary" href="?event=cyber-defense-summit" data-event="cyber-defense-summit">View event brochure</a></div></article>
+<article class="card"><div class="card-top green"><small>Executive briefing · 2026</small><h3>Incident Response Readiness</h3></div><div class="card-body"><p>Response planning, executive decisions, crisis coordination, and recovery.</p><a class="btn primary" href="?event=incident-response-readiness" data-event="incident-response-readiness">View event brochure</a></div></article>
+<article class="card"><div class="card-top purple"><small>Strategy workshop · 2026</small><h3>Cloud Security Strategy Workshop</h3></div><div class="card-body"><p>Cloud governance, identity controls, visibility, and security operations.</p><a class="btn primary" href="?event=cloud-security-workshop" data-event="cloud-security-workshop">View event brochure</a></div></article>
+</div></div></section>
+<section id="about"><div class="container panel"><span class="eyebrow">How it works</span><h2>Browse, choose, request</h2><p class="lead">Open an event brochure, review the details, and submit the embedded Customer Insights form.</p></div></section>
+</main><footer><div class="container footer"><span>© 2026 NexaShield Cyber Defense.</span><span>Demonstration website</span></div></footer>
+</div>
+<button onclick="enableReminders()">
+
+Enable Email Reminders
+</button>
+<div class="details" id="detailsView"><header class="header"><div class="container nav"><a class="brand back-home" href="#events"><span class="shield">N</span><span>Nexa<b>Shield</b></span></a><a class="btn secondary back-home" href="#events">All events</a></div></header><main><div id="detailsRoot"></div><section id="request-invitation"><div class="container panel request"><span class="eyebrow">Request invitation</span><h2>Send the invitation to your email</h2><p class="lead">Submit your details below for the selected event.</p><div class="selected"><span>Selected event</span><strong id="selectedEventName">Choose an event</strong></div><div class="form-host" id="customerInsightsFormHost"><div data-form-id="efbd04de-cc8f-f111-8076-000d3a59d82d" data-form-api-url="https://public-usa.mkt.dynamics.com/api/v1.0/orgs/39a3b82d-2a6e-f111-b27b-000d3a5ca807/landingpageforms" data-cached-form-url="https://assets1-usa.mkt.dynamics.com/39a3b82d-2a6e-f111-b27b-000d3a5ca807/digitalassets/forms/efbd04de-cc8f-f111-8076-000d3a59d82d"></div></div><div class="status" id="eventFieldStatus">Waiting for form…</div></div></section></main><footer><div class="container footer"><span>© 2026 NexaShield Cyber Defense.</span><span>Demonstration website</span></div></footer></div>
 <script>
-let currentEventKey=new URLSearchParams(location.search).get("event")||"";
-function findSelectedEventField(){return document.querySelector('input[name="selectedevent"],input[name="shorttext4025"],input[id^="shorttext4025-"]')}
-function populateSelectedEvent(eventKey){if(!eventKey)return false;const field=findSelectedEventField(),status=document.getElementById("eventFieldStatus");if(!field){if(status){status.className="status";status.textContent="Form loaded, waiting for Selected Event field…"}return false}const block=field.closest(".textFormFieldBlock");if(block)block.style.setProperty("display","none","important");field.removeAttribute("readonly");field.value=eventKey;field.dispatchEvent(new Event("input",{bubbles:true}));field.dispatchEvent(new Event("change",{bubbles:true}));field.setAttribute("readonly","readonly");if(status){status.className="status success";status.textContent="Selected event value: "+field.value}console.log("Selected Event populated:",field.value);return true}
-function retryPopulateSelectedEvent(){let attempts=0;const timer=setInterval(()=>{attempts++;if(populateSelectedEvent(currentEventKey)||attempts>=40){clearInterval(timer);if(attempts>=40&&!findSelectedEventField()){const status=document.getElementById("eventFieldStatus");if(status){status.className="status error";status.textContent="Selected Event field was not found in the published form."}}}},150)}
-document.addEventListener("d365mkt-afterformload",()=>{currentEventKey=new URLSearchParams(location.search).get("event")||currentEventKey;retryPopulateSelectedEvent()});
-const formHost=document.getElementById("customerInsightsFormHost");new MutationObserver(()=>{if(currentEventKey)populateSelectedEvent(currentEventKey)}).observe(formHost,{childList:true,subtree:true});
+let currentEventKey = new URLSearchParams(location.search).get('event') || '';
+function populateSelectedEvent(eventKey){
+  if(!eventKey) return false;
+  const field=document.querySelector('input[name="selectedevent"]');
+  const status=document.getElementById('eventFieldStatus');
+  if(!field){if(status)status.textContent='Form loaded, waiting for Selected Event field…';return false;}
+  field.removeAttribute('readonly');
+  field.value=eventKey;
+  field.dispatchEvent(new Event('input',{bubbles:true}));
+  field.dispatchEvent(new Event('change',{bubbles:true}));
+  field.setAttribute('readonly','readonly');
+  if(status)status.textContent='Selected event value: '+field.value;
+  console.log('Selected Event populated:',field.value);
+  return true;
+}
+document.addEventListener('d365mkt-afterformload',()=>{
+  currentEventKey=new URLSearchParams(location.search).get('event')||currentEventKey;
+  let attempts=0;
+  const timer=setInterval(()=>{
+    attempts++;
+    if(populateSelectedEvent(currentEventKey)||attempts>=20)clearInterval(timer);
+  },150);
+});
 </script>
 <script src="https://formui-usa1.mkt.dynamics.com/usa/FormLoader/FormLoader.bundle.js"></script>
+ 
 <script>
-const events = {
-  "NexaShield Cyber Defense Summit 2026": {
-    type: "Flagship Summit",
-    title: "NexaShield Cyber Defense Summit 2026",
-    summary: "A focused gathering for security leaders and practitioners exploring modern threats, resilient operations, zero-trust strategy, and collaborative cyber defense.",
-    date: "18 September 2026",
-    time: "9:00 AM – 4:30 PM",
-    format: "In-person",
-    audience: "Security leaders",
-    agenda: [
-      [
-        "09:00",
-        "Opening and threat landscape",
-        "Risks shaping enterprise security."
-      ],
-      [
-        "10:15",
-        "Zero-trust operating model",
-        "Moving principles into measurable controls."
-      ],
-      [
-        "11:45",
-        "Intelligence-led defense",
-        "Prioritizing action using threat intelligence."
-      ],
-      [
-        "14:00",
-        "Incident simulation",
-        "Leadership decisions during a cyber event."
-      ]
-    ],
-    highlights: [
-      "Executive and practitioner sessions",
-      "Incident simulation",
-      "Zero-trust guidance",
-      "Peer networking"
-    ]
-  },
-
-  "Customer Insights – Journeys Employee Training": {
-    type: "Executive Briefing",
-    title: "Customer Insights – Journeys Employee Training",
-    summary: "A focused employee training programme covering Customer Insights – Journeys, audience engagement, journey orchestration, and practical marketing automation.",
-    date: "9 October 2026",
-    time: "10:00 AM – 1:00 PM",
-    format: "Hybrid",
-    audience: "Customer Insights users",
-    agenda: [
-      [
-        "10:00",
-        "Customer Insights overview",
-        "Understand the core capabilities of Customer Insights – Journeys."
-      ],
-      [
-        "10:40",
-        "Segments and triggers",
-        "Learn how audiences enter real-time journeys."
-      ],
-      [
-        "11:30",
-        "Journey orchestration",
-        "Build branches, waits, conditions, and follow-up communications."
-      ],
-      [
-        "12:30",
-        "Practical implementation",
-        "Apply the learning through a guided business scenario."
-      ]
-    ],
-    highlights: [
-      "Real-time journey fundamentals",
-      "Segments and triggers",
-      "Marketing forms",
-      "Practical automation exercise"
-    ]
-  },
-
-  "SkyAssist Customer Service Training": {
-    type: "Strategy Workshop",
-    title: "SkyAssist Customer Service Training",
-    summary: "A practical customer-service training programme focused on case handling, service consistency, customer communication, and operational improvement.",
-    date: "6 November 2026",
-    time: "9:30 AM – 3:30 PM",
-    format: "Online",
-    audience: "Customer service teams",
-    agenda: [
-      [
-        "09:30",
-        "Customer service foundations",
-        "Review the principles of consistent and effective customer support."
-      ],
-      [
-        "10:30",
-        "Case management",
-        "Learn how to capture, prioritize, assign, and resolve customer cases."
-      ],
-      [
-        "11:45",
-        "Customer communication",
-        "Develop clear and professional communication throughout the service process."
-      ],
-      [
-        "13:45",
-        "Service improvement workshop",
-        "Identify operational improvements and create an actionable service roadmap."
-      ]
-    ],
-    highlights: [
-      "Case-management practices",
-      "Customer communication",
-      "Service consistency",
-      "Operational improvement plan"
-    ]
-  }
-};
-const home=document.getElementById("homeView"),details=document.getElementById("detailsView"),root=document.getElementById("detailsRoot"),selectedEventName=document.getElementById("selectedEventName");
-function showEvent(key,push=true){const e=events[key];if(!e)return;currentEventKey=key;const agenda=e.agenda.map(x=>`<div class="agenda-item"><div class="time">${x[0]}</div><div><strong>${x[1]}</strong><small>${x[2]}</small></div></div>`).join(""),benefits=e.highlights.map(x=>`<li>${x}</li>`).join("");root.innerHTML=`<section class="details-hero"><div class="container"><a class="back back-home" href="#events">← Back to all events</a><p class="eyebrow">${e.type} · NexaShield 2026</p><h1>${e.title}</h1><p class="lead">${e.summary}</p><div class="facts"><div class="fact"><span>Date</span><strong>${e.date}</strong></div><div class="fact"><span>Time</span><strong>${e.time}</strong></div><div class="fact"><span>Format</span><strong>${e.format}</strong></div><div class="fact"><span>For</span><strong>${e.audience}</strong></div></div></div></section><section><div class="container details-grid"><div class="panel"><h2>Event agenda</h2><div class="agenda">${agenda}</div></div><aside class="panel"><h2>What you will gain</h2><ul class="highlights">${benefits}</ul></aside></div></section>`;selectedEventName.textContent=e.title;home.classList.add("hidden");details.classList.add("active");document.title=e.title+" | NexaShield";if(push)history.pushState({event:key},"",`?event=${encodeURIComponent(key)}`);if(!populateSelectedEvent(key))retryPopulateSelectedEvent();window.scrollTo(0,0);bindBack()}
-function showHome(push=true){details.classList.remove("active");home.classList.remove("hidden");document.title="NexaShield Cyber Defense | Events";if(push)history.pushState({},"",location.pathname+"#events");setTimeout(()=>document.getElementById("events").scrollIntoView(),20)}
-function bindBack(){document.querySelectorAll(".back-home").forEach(a=>a.onclick=x=>{x.preventDefault();showHome()})}
-document.querySelectorAll("[data-event]").forEach(a=>a.onclick=x=>{x.preventDefault();showEvent(a.dataset.event)});window.onpopstate=()=>{const key=new URLSearchParams(location.search).get("event");key&&events[key]?showEvent(key,false):showHome(false)};if(currentEventKey&&events[currentEventKey])showEvent(currentEventKey,false);
+const events={
+'cyber-defense-summit':{type:'Flagship Summit',title:'NexaShield Cyber Defense Summit 2026',summary:'A focused gathering for security leaders and practitioners exploring modern threats, resilient operations, zero-trust strategy, and collaborative cyber defense.',date:'18 September 2026',time:'9:00 AM – 4:30 PM',format:'In-person',audience:'Security leaders',agenda:[['09:00','Opening and threat landscape','Risks shaping enterprise security.'],['10:15','Zero-trust operating model','Moving principles into measurable controls.'],['11:45','Intelligence-led defense','Prioritizing action using threat intelligence.'],['14:00','Incident simulation','Leadership decisions during a cyber event.']],highlights:['Executive and practitioner sessions','Incident simulation','Zero-trust guidance','Peer networking']},
+'incident-response-readiness':{type:'Executive Briefing',title:'Incident Response Readiness Briefing',summary:'Prepare people, processes, and decision paths before a high-pressure cybersecurity incident occurs.',date:'9 October 2026',time:'10:00 AM – 1:00 PM',format:'Hybrid',audience:'CISOs and response leads',agenda:[['10:00','Readiness baseline','Review the critical parts of a response plan.'],['10:40','Roles under pressure','Clarify business and technical ownership.'],['11:30','Executive tabletop','Test decisions using a ransomware scenario.'],['12:30','Improvement plan','Prioritize readiness actions.']],highlights:['Executive decision framework','Ransomware tabletop','Response-role clarity','Readiness checklist']},
+'cloud-security-workshop':{type:'Strategy Workshop',title:'Cloud Security Strategy Workshop',summary:'Strengthen cloud governance, identity controls, workload visibility, and security operations.',date:'6 November 2026',time:'9:30 AM – 3:30 PM',format:'Online',audience:'Cloud and security teams',agenda:[['09:30','Cloud risk priorities','Map risks across workloads.'],['10:30','Identity-first controls','Reduce exposure through access architecture.'],['11:45','Visibility and detection','Design useful telemetry and alerting.'],['13:45','Governance workshop','Create repeatable guardrails.']],highlights:['Strategy exercises','Identity focus','Governance patterns','90-day roadmap']}}
+;
+const home=document.getElementById('homeView'),details=document.getElementById('detailsView'),root=document.getElementById('detailsRoot'),selectedEventName=document.getElementById('selectedEventName');
+function showEvent(key,push=true){const e=events[key];if(!e)return;currentEventKey=key;const agenda=e.agenda.map(x=>`<div class="agenda-item"><div class="time">${x[0]}</div><div><strong>${x[1]}</strong><small>${x[2]}</small></div></div>`).join('');const benefits=e.highlights.map(x=>`<li>${x}</li>`).join('');root.innerHTML=`<section class="details-hero"><div class="container"><a class="back back-home" href="#events">← Back to all events</a><p class="eyebrow">${e.type} · NexaShield 2026</p><h1>${e.title}</h1><p class="lead">${e.summary}</p><div class="facts"><div class="fact"><span>Date</span><strong>${e.date}</strong></div><div class="fact"><span>Time</span><strong>${e.time}</strong></div><div class="fact"><span>Format</span><strong>${e.format}</strong></div><div class="fact"><span>For</span><strong>${e.audience}</strong></div></div></div></section><section><div class="container details-grid"><div class="panel"><h2>Event agenda</h2><div class="agenda">${agenda}</div></div><aside class="panel"><h2>What you will gain</h2><ul class="highlights">${benefits}</ul></aside></div></section>`;selectedEventName.textContent=e.title;home.classList.add('hidden');details.classList.add('active');document.title=e.title+' | NexaShield';if(push)history.pushState({event:key},'',`?event=${encodeURIComponent(key)}`);populateSelectedEvent(key);window.scrollTo(0,0);bindBack()}
+function showHome(push=true){details.classList.remove('active');home.classList.remove('hidden');document.title='NexaShield Cyber Defense | Events';if(push)history.pushState({},'',location.pathname+'#events');setTimeout(()=>document.getElementById('events').scrollIntoView(),20)}
+function bindBack(){document.querySelectorAll('.back-home').forEach(a=>a.onclick=x=>{x.preventDefault();showHome()})}
+document.querySelectorAll('[data-event]').forEach(a=>a.onclick=x=>{x.preventDefault();showEvent(a.dataset.event)});window.onpopstate=()=>{const key=new URLSearchParams(location.search).get('event');key&&events[key]?showEvent(key,false):showHome(false)};if(currentEventKey&&events[currentEventKey])showEvent(currentEventKey,false);
 </script>
 </body>
 </html>
